@@ -1,5 +1,5 @@
 # CodeIgniter Remap
-We want to make using CodeIgniter even similar. Sometimes, you can't use a method name because of PHP's own limitations. Or you're updating something via POST and it get's messy code with other GET methods. If this has happened to you, we're here to help.
+By [@srtfisher](http://twitter.com/srtfisher) - We want to make using CodeIgniter even similar. Sometimes, you can't use a method name because of PHP's own limitations. Or you're updating something via POST and it get's messy code with other GET methods. If this has happened to you, we're here to help.
 
 We support CodeIgniter >= 2.0 and PHP 5.3
 
@@ -17,7 +17,7 @@ We don't want to mess up old code. We do this by being able to use different var
 You can view a bunch of different examples in the `application/controller/remap.php` file.
 
 ### Adding a Prefix to Controller Methods
-We add a prefix to all controller methods. You can set the prefix in your Controller's `__construct` function.
+We add a prefix to all controller methods. You can set the prefix in your Controller's `__construct` function. The default prefix is `action_`.
 
 	<?php
 	class Thecontroller
