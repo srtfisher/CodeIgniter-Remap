@@ -55,13 +55,16 @@ class MY_Controller extends CI_Controller
                // `action_method_get`, `action_method_post`, ..
                $this->prefix.$method.'_'.$this->request->method,
                
+               // `action_method`
+               $this->prefix.$method,
+               
                // `method_get`, `method_post`, ..
                $method.'_'.$this->request->method,
                
                // `method`
                $method,
           );
-          
+          die(var_dump($methods));
           // Loop though them in priority
           foreach($methods as $m) :
                // They founnd it

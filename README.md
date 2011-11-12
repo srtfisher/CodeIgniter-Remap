@@ -11,6 +11,7 @@ We don't want to mess up old code. We do this by being able to use different var
 
 - `prefix_methodName_requestType`
 	- For example, controller/view/123 would be `action_view_get`
+- `prefix_methodName`
 - `methodName_requestType`
 - `methodName`
 
