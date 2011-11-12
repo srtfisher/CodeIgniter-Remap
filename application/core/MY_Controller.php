@@ -64,7 +64,7 @@ class MY_Controller extends CI_Controller
                // `method`
                $method,
           );
-          die(var_dump($methods));
+          
           // Loop though them in priority
           foreach($methods as $m) :
                // They founnd it
