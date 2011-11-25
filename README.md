@@ -13,6 +13,7 @@ We don't want to mess up old code. We do this by being able to use different var
 	- For example, controller/view/123 would be `action_view_get`
 - `prefix_methodName`
 - `methodName_requestType`
+- `prefix_methodName`
 - `methodName`
 
 You can view a bunch of different examples in the `application/controller/remap.php` file.

@@ -61,6 +61,9 @@ class MY_Controller extends CI_Controller
                // `method_get`, `method_post`, ..
                $method.'_'.$this->request->method,
                
+               // `action_method`
+               $this->prefix.$method,
+               
                // `method`
                $method,
           );
