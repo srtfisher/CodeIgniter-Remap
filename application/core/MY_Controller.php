@@ -64,6 +64,9 @@ class MY_Controller extends CI_Controller
                // `action_method`
                $this->prefix.$method,
                
+               // `action_four_oh_four`
+               $this->prefix.'four_oh_four',
+               
                // `method`
                $method,
           );
