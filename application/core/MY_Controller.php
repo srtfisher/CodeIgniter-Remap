@@ -25,7 +25,7 @@ class MY_Controller extends CI_Controller
       * @global     object
       * @access     protected
      **/
-     protected $request = NULL;
+     protected $method = NULL;
      
      /**
       * The Constructor
@@ -38,7 +38,7 @@ class MY_Controller extends CI_Controller
           parent::__construct();
           
           // Find the method
-          $this->request->method = $this->_detect_method();
+          $this->method = $this->_detect_method();
      }
      
      /**
@@ -49,26 +49,29 @@ class MY_Controller extends CI_Controller
      **/
      public function _remap($method, $params = array())
      {
+          // We allow dashes in our method names
+          $method = str_replace('-', '_DASH_', $method);
+          
           // The Methods we are going to generate in order of priority
           $methods = array(
                
                // `action_method_get`, `action_method_post`, ..
-               $this->prefix.$method.'_'.$this->request->method,
+               $this->prefix.$method.'_'.$this->method,
                
                // `action_method`
                $this->prefix.$method,
                
                // `method_get`, `method_post`, ..
-               $method.'_'.$this->request->method,
+               $method.'_'.$this->method,
                
                // `action_method`
                $this->prefix.$method,
                
-               // `action_four_oh_four`
-               $this->prefix.'four_oh_four',
-               
                // `method`
                $method,
+               
+               // `action_four_oh_four_get`
+               $this->prefix.'four_oh_four.'.$this->method,
           );
           
           // Loop though them in priority
