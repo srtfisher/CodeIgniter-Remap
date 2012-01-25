@@ -16,7 +16,17 @@ We don't want to mess up old code. We do this by being able to use different var
 - `prefix_methodName`
 - `methodName`
 
-You can view a bunch of different examples in the `application/controller/remap.php` file.
+You can view a bunch of different examples in the `application/controller/remap.php` file. 
+
+## Dashes in Methods
+You can now have dashes in your methods. If you include `_DASH_` in the method name, we will take that and convert it to a dash. Take this example:
+
+`public function action_view_DASH_transaction_get() { }`
+
+Will be loaded when you go to `/controller/view-transaction` via a HTTP Get. You can still use `_post`, `_put`, etc.
+
+## Automatic Fallback
+You can automatically fall back to a certain method for that controller if it doesn't meet another method. Naming it `prefix_four_oh_four_get` will work.
 
 ### Adding a Prefix to Controller Methods
 We add a prefix to all controller methods. You can set the prefix in your Controller's `__construct` function. The default prefix is `action_`.
@@ -52,6 +62,9 @@ That's it!
 
 #### 0.1
 - Initial Release
+
+#### 0.2
+- Added support for Dashes and a 404 fallback method.
 
 ### Donations
 I love making open-source software. If this has helped you out, help me out by sending me a cup of coffee on PayPal (srtfisher@gmail.com).
